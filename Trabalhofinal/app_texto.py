@@ -9,5 +9,5 @@ if __name__ == "__main__":
     iniciar_interface_terminal(controlador)
 
 
-# adicionar: py app_texto.py
+# adicionar: py app_texto.py ou python3 app_texto.py
 
