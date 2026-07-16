@@ -7,3 +7,7 @@ if __name__ == "__main__":
     
     # inicia a interface textual 
     iniciar_interface_terminal(controlador)
+
+
+# adicionar: py app_texto.py
+
