@@ -7,7 +7,7 @@ class GerenciadorFinanceiro:
         self.movimentacoes = self.carregar_dados()
 
     def carregar_dados(self):
-        """Abre o arquivo JSON. Se não existir, retorna uma lista vazia."""
+        """abre o  json. se não tiver, retorna uma lista vazia"""
         if not os.path.exists(self.arquivo):
             return []
         with open(self.arquivo, 'r', encoding='utf-8') as f:
@@ -15,22 +15,22 @@ class GerenciadorFinanceiro:
             return json.load(f)
 
     def salvar_dados(self):
-        """Salva a lista de dicionários no arquivo JSON."""
+        """salva a lista de dicionários no arquivo json"""
         with open(self.arquivo, 'w', encoding='utf-8') as f:
             json.dump(self.movimentacoes, f, indent=4, ensure_ascii=False)
 
     def adicionar_movimentacao(self, objeto_movimentacao):
-        """Recebe o objeto do Model, transforma em dicionário e adiciona à lista."""
+
         dicionario = objeto_movimentacao.para_dicionario()
         self.movimentacoes.append(dicionario)
         self.salvar_dados()
 
     def obter_todas(self):
-        """Retorna a lista completa de movimentações."""
+        """retorna a lista completa de movimentações"""
         return self.movimentacoes
 
     def remover_movimentacao(self, indice):
-        """Remove um item da lista usando a sua posição (índice)."""
+        """remove um item da lista"""
         if 0 <= indice < len(self.movimentacoes):
             self.movimentacoes.pop(indice)
             self.salvar_dados()
@@ -38,7 +38,7 @@ class GerenciadorFinanceiro:
         return False
 
     def calcular_saldo(self):
-        """Calcula o saldo usando um loop 'for' bem simples e direto."""
+        """calcula o saldo usando um loop"""
         total_receitas = 0.0
         total_despesas = 0.0
 
@@ -52,7 +52,7 @@ class GerenciadorFinanceiro:
         return saldo, total_receitas, total_despesas
 
     def calcular_por_categoria(self):
-        """Agrupa os gastos de cada categoria usando um dicionário."""
+        """agrupa os gastos de cada categoria"""
         categorias = {}
         for m in self.movimentacoes:
             if m['tipo'] == "Despesa":
