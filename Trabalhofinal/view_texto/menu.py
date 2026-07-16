@@ -23,9 +23,9 @@ def exibir_lista(movimentacoes):
 
     print("\nNº  | TIPO     | VALOR       | CATEGORIA       | DESCRIÇÃO   | DATA")
     print("-" * 75)
-    # O 'enumerate' nos dá o índice (pos) e o item ao mesmo tempo
+    # O enumerate dá o índice (pos) e o item ao mesmo tempo
     for pos, m in enumerate(movimentacoes):
-        # pos + 1 serve para mostrar de forma amigável ao usuário (começando do 1 em vez de 0)
+        
         print(f"{pos + 1:<3} | {m['tipo']:<8} | R$ {m['valor']:<9.2f} | {m['categoria']:<15} | {m['descricao']:<11} | {m['data']}")
     print("-" * 75)
 
@@ -70,9 +70,9 @@ def iniciar_interface_terminal(controller):
                 from datetime import datetime
                 data = datetime.now().strftime("%d/%m/%Y")
             
-            # 1. Cria o objeto usando o Model
+            # 1. cria o objeto usando o Model
             nova_mov = Movimentacao(valor, tipo, categoria, descricao, data)
-            # 2. Envia para o Controller salvar
+            # 2. envia para o Controller salvar
             controller.adicionar_movimentacao(nova_mov)
             
             print(f"\n[Sucesso] {tipo} salva com sucesso!")
@@ -107,7 +107,7 @@ def iniciar_interface_terminal(controller):
             if len(lista) > 0:
                 try:
                     num = int(input("\nDigite o número (Nº) que deseja excluir: "))
-                    # Ajusta de volta para o índice do Python (subtrai 1)
+                    
                     indice = num - 1
                     
                     if controller.remover_movimentacao(indice):
