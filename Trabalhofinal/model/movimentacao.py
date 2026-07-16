@@ -1,7 +1,7 @@
 class Movimentacao:
     def __init__(self, valor, tipo, categoria, descricao, data):
         self.valor = float(valor)
-        self.tipo = tipo            # "Receita" ou "Despesa"
+        self.tipo = tipo            #pode ser receita ou despesa
         self.categoria = categoria
         self.descricao = descricao
         self.data = data
