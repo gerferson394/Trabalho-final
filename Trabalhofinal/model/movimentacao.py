@@ -7,7 +7,7 @@ class Movimentacao:
         self.data = data
 
     def para_dicionario(self):
-        """Converte as informações do objeto num dicionário simples."""
+        """converte as informações do objeto num dicionário simples."""
         return {
             'valor': self.valor,
             'tipo': self.tipo,
