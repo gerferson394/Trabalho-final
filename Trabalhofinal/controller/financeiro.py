@@ -11,7 +11,7 @@ class GerenciadorFinanceiro:
         if not os.path.exists(self.arquivo):
             return []
         with open(self.arquivo, 'r', encoding='utf-8') as f:
-            # Carrega a lista de dicionários direto do arquivo
+            # carrega a lista de dicionários 
             return json.load(f)
 
     def salvar_dados(self):
