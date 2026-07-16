@@ -58,7 +58,7 @@ class GerenciadorFinanceiro:
             if m['tipo'] == "Despesa":
                 cat = m['categoria']
                 valor = m['valor']
-                # Se a categoria já existe no dicionário, soma. Se não, cria com o valor atual.
+                # se a categoria ja existe no dicionário ele soma, se não ele cria com o valor atual
                 if cat in categorias:
                     categorias[cat] += valor
                 else:
